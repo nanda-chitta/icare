@@ -1,0 +1,45 @@
+<div class="container login">
+  <div class="row">
+    <div class="col-md-3 login-left">
+      <%= render 'devise/shared/shared_view' %>
+      <%= link_to "Register", new_registration_path(resource_name), class: 'btn btn-register'%> <br/>
+    </div>
+    <div class="col-md-9 login-right">
+      <div class="row login-form mt-0 p-3">
+        <div class="col-md-6 offset-3">
+          <h3 class="text-center mb-3">Log in</h3>
+          <div class="card p-3 mt-2">
+            <div class="card-body">
+              <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <div class="form-group">
+                  <%= f.label :email %><br />
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'%>
+                </div>
+
+                <div class="form-group mt-3">
+                  <%= f.label :password %><br />
+                  <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
+                </div>
+
+                <% if devise_mapping.rememberable? %>
+                  <div class="form-group mt-3">
+                    <%= f.check_box :remember_me, class: 'form-check-input' %>
+                    <%= f.label :remember_me, class: 'form-check-label' %>
+                  </div>
+                <% end %>
+
+                <div class="actions mt-3">
+                  <%= f.submit "Log in", class: 'btn btn-primary btnLogin'%>
+                </div>
+              <% end %>
+
+              <div class="mt-5">
+                <%= render "devise/shared/links" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

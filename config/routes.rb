@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root             'dashboard#home'
+  get 'help'    => 'dashboard#help'
+  get 'about'   => 'dashboard#about'
+  get 'contact' => 'dashboard#contact'
 
-  # Defines the root path route ("/")
-  root 'home#index'
+  devise_for :users
+  resources :users
 end

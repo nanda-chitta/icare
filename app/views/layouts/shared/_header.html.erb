@@ -1,0 +1,64 @@
+<!--Navbar Header-->
+<nav class="navbar navbar-expand-lg">
+<!--  Navbar content-->
+  <div class="container">
+<!--    Left Side-->
+    <ul class="navbar-nav navbar-left">
+<!--      Site Logo Here-->
+      <li class="nav-item p-0">
+        <a class="navbar-brand" href="#">
+          <%= image_tag asset_path('common/logo-white.png'), width: '50px', height: '50px' %>
+        </a>
+      </li>
+<!--      Site Logo Here -->
+      <li class="nav-item">
+        <a href="/" class="nav-link nav-home">Home</a>
+      </li>
+    </ul>
+<!--    Left Side -->
+
+<!--    Right Side -->
+    <ul class="navbar-nav navbar-right">
+      <li class="nav-item">
+        <a href="/about" class="nav-link nav-about">About</a>
+      </li>
+      <li class="nav-item">
+        <a href="/contact" class="nav-link nav-contact">Contact</a>
+      </li>
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <div class="btn-group btn-icon">
+            <a href="#" class="dropdown-toggle text-decoration-none text-light nv-icon" data-bs-toggle="dropdown">
+              <i class="bi bi-person-circle bi-icon"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a href="#" class="dropdown-item"><i class="bi bi-person-circle"></i> Your Profile</a></li>
+              <li><a href="#" class="dropdown-item"><i class="bi bi-lock-fill"></i> Change Password</a></li>
+              <li><a href="#" class="dropdown-item"><i class="bi bi-gear-fill"></i> Admin Section</a></li>
+              <li><a href="#" class="dropdown-item"><i class="bi bi-gear-wide-connected"></i> IMAP
+                Settings</a></li>
+              <li>
+                <hr class="dropdown-divider"/>
+              </li>
+              <li>
+                <%= link_to destroy_user_session_path, data: { turbo_method: :delete }, class: 'dropdown-item' do %>
+                  <i class="bi bi-box-arrow-right"></i> Sign out
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </li>
+      <% else %>
+        <li class="nav-item nav-s-item">
+          <%= link_to "Sign Up", new_user_registration_path, class: 'nav-sign-up' %>
+          <span class="nav-s-bar">/</span>
+          <%= link_to "Sign In", new_user_session_path, class: 'nav-sign-in' %>
+        </li>
+      <% end %>
+
+    </ul>
+<!--    Right Side -->
+  </div>
+<!--  Navbar content -->
+</nav>
+<!--Navbar Header-->

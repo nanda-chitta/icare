@@ -1,0 +1,32 @@
+<div class="container register">
+  <div class="row">
+    <div class="col-md-3 register-left">
+      <%= render 'devise/shared/shared_view' %>
+      <%= link_to "Log in", new_session_path(resource_name), class: 'btn btn-login'%> <br/>
+    </div>
+    <div class="col-md-9 register-right pr-3">
+      <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#doctor" role="tab" aria-controls="doctor" aria-selected="true">Doctor</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link float-end" id="profile-tab" data-bs-toggle="tab" href="#patient" role="tab" aria-controls="patient" aria-selected="false">Patient</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="doctor" role="tabpanel" aria-labelledby="doctor-tab">
+          <h3 class="register-heading">Register as Doctor</h3>
+          <div class="row register-form">
+            <%= render 'devise/registrations/form', type: 'doctor' %>
+          </div>
+        </div>
+        <div class="tab-pane fade show" id="patient" role="tabpanel" aria-labelledby="patient-tab">
+          <h3  class="register-heading">Register as Patient</h3>
+          <div class="row register-form">
+            <%= render 'devise/registrations/form', type: 'patient' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

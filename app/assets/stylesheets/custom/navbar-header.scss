@@ -1,0 +1,123 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+
+* {
+  margin: 0;
+  font-family: "Open Sans";
+  color: #333;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  border-bottom: 1px solid #f2f2f2;
+  background: linear-gradient(to right, rgb(57, 49, 175) 0, rgb(0, 198, 255) 100%);
+  color: #fff;
+}
+.navbar h1 {
+  color: #f1356d;
+}
+.navbar .links {
+  margin-left: auto;
+}
+.navbar a {
+  text-decoration: none;
+  cursor: pointer;
+}
+.navbar a:hover {
+  color: #f1356d;
+}
+.content {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.nav-item {
+  cursor: pointer;
+  padding: 0 10px;
+  font-size: 16px;
+  font-weight: 500;
+  display: inline-block;
+  .nav-link {
+    margin: 0;
+    border: 0;
+  }
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+  background-color: transparent;
+  border-color: transparent;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.nav-home,
+.nav-about,
+.nav-contact,
+.nav-sign-in,
+.nav-sign-up,
+.nav-s-bar {
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  &:target {
+    color: #fff !important;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 600 !important;
+  }
+}
+
+.navbar-nav .nav-link.nav-home {
+  font-size: 16px;
+  font-weight: 500;
+  padding-top: 10px;
+}
+.navbar-brand img {
+  vertical-align: middle;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: 1px solid lightblue;
+}
+
+
+.btn-icon{
+  display: inline;
+  position: relative;
+  padding: 0;
+}
+
+.nv-icon {
+  display: inline;
+  position: relative;
+  padding: 0px;
+  &:after {
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+  }
+}
+
+.bi-icon {
+  &:before {
+    border: 1px solid lightblue;
+    border-radius: 50%;
+    font-weight: 500;
+    font-size: 40px;
+    font-family: "Open Sans";
+    color: #f2f2f2;
+    vertical-align: middle;
+  }
+}
+
+.nav-s-item {
+  padding: 8px;
+}

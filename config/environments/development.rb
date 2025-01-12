@@ -70,20 +70,20 @@ Rails.application.configure do
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 
+  config.action_mailer.default_url_options = { host: ENV.fetch('DEFAULT_SMTP_HOST'), port: 3000 }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { address: '127.0.0.1', port: 1025 }
   config.action_mailer.perform_deliveries = true
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
-  # config.action_mailer.delivery_method = :letter_opener
-
-  config.action_mailer.default_url_options = { host: ENV.fetch('SMTP_HOST') }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    user_name: ENV.fetch('SMTP_USERNAME'),
-    password: ENV.fetch('SMTP_PASSWORD'),
-    domain: ENV.fetch('SMTP_HOST'),
-    address: ENV.fetch('SMTP_ADDRESS'),
-    port: ENV.fetch('SMTP_PORT'),
-    authentication: :plain,
-    enable_starttls_auto: true
-  }
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   user_name: ENV.fetch('SMTP_USERNAME'),
+  #   password: ENV.fetch('SMTP_PASSWORD'),
+  #   domain: ENV.fetch('SMTP_HOST'),
+  #   address: ENV.fetch('SMTP_ADDRESS'),
+  #   port: ENV.fetch('SMTP_PORT'),
+  #   authentication: :plain,
+  #   enable_starttls_auto: true
+  # }
 end

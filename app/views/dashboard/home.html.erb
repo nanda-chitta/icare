@@ -1,0 +1,44 @@
+<% provide(:title, 'Home') %>
+<div class="row">
+  <div class="col-8 offset-2">
+    <% if @doctors.size.zero? %>
+      <div class="no-available">
+        <span> No Doctor available!</span>
+      </div>
+    <% else %>
+      <% @doctors.each do |doctor| %>
+        <div class="row">
+          <div class="col-6 border">
+            <strong><%= doctor.name %></strong>
+            <br/>
+            <span>0 consultations conducted</span>
+            <br/>
+            <span><i class="bi bi-star-fill"></i>&nbsp;0, 0 reviews</span>
+            <br/>
+            <span>Price: $0.0</span>
+            <br/>
+            <%= link_to 'Details', user_path(doctor) %>
+          </div>
+          <div class="col-6 border"></div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+<%# if user_signed_in? %>
+<!--  <div> Welcome <%#= current_user.name %> </div>-->
+
+<%# else %>
+<!--  <div class="center jumbotron">-->
+<!--    <h1>Welcome to ICARE</h1>-->
+<!--    <h2>-->
+<!--      <a href="#">How May I Help You ?</a>-->
+<!--    </h2>-->
+    <%#= link_to "Sign up now!", new_user_registration_path, class: "btn btn-lg btn-primary" %>
+<!--  </div>-->
+<%# end %>

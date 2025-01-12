@@ -102,3 +102,5 @@ group :test do
   gem 'webdrivers'
   gem 'webmock', '~> 3.19'
 end
+
+gem 'devise', '~> 4.9', '>= 4.9.4'

@@ -1,0 +1,11 @@
+<div class="flash-view pt-3">
+  <% flash.each do |type, msg| %>
+    <div class="alert <%= verify_css(type) %> d-flex alert-dismissible fade show" role="alert">
+      <i class="bi <%= verify_icon(type) %>"></i>
+      <div>
+        <span class="flash-msg"><%= msg %></span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    </div>
+  <% end %>
+</div>
